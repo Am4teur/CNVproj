@@ -25,9 +25,9 @@ public class WebServer {
 		//final HttpServer server = HttpServer.create(new InetSocketAddress("127.0.0.1", 8000), 0);
 
 		final HttpServer server = HttpServer.create(new InetSocketAddress("localhost", 8000), 0);
-		
 
 
+		server.createContext("/", new Hello());
 		server.createContext("/sudoku", new MyHandler());
 
 		// be aware! infinite pool of threads!
@@ -122,6 +122,17 @@ public class WebServer {
 			os.close();
 
 			System.out.println("> Sent response to " + t.getRemoteAddress().toString());
+		}
+	}
+
+	static class Hello implements HttpHandler {
+		@Override
+		public void handle(HttpExchange t) throws IOException {
+			String response = "Hello! I'm up and running!";
+			t.sendResponseHeaders(200, response.length());
+			OutputStream os = t.getResponseBody();
+			os.write(response.getBytes());
+			os.close();
 		}
 	}
 }

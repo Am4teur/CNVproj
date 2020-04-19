@@ -24,7 +24,7 @@ public class WebServer {
 
 		//final HttpServer server = HttpServer.create(new InetSocketAddress("127.0.0.1", 8000), 0);
 
-		final HttpServer server = HttpServer.create(new InetSocketAddress("localhost", 8000), 0);
+		final HttpServer server = HttpServer.create(new InetSocketAddress( 8000), 0);
 
 
 		server.createContext("/", new Hello());

@@ -18,6 +18,9 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.concurrent.Executors;
 
+import BIT.*;
+
+
 public class WebServer {
 
 	public static void main(final String[] args) throws Exception {
@@ -93,6 +96,30 @@ public class WebServer {
 
 			//Solve sudoku puzzle
 			JSONArray solution = s.solveSudoku();
+
+
+			BufferedWriter out = null;
+
+			try {
+				File file = new File("/home/am4teur/cnv/tempBD.txt");
+				FileWriter fstream = new FileWriter(file, true); //true tells to append data.
+				out = new BufferedWriter(fstream);
+				System.out.println("PRINT TO FILE");
+				out.write("\n");
+				out.write("> Query:\t" + query + "\n");
+				out.write("> Counter:\t" + ICount.getICount());
+				System.out.println("PRINT TO FILE DONE");
+			}
+			
+			catch (IOException e) {
+				System.err.println("Error: " + e.getMessage());
+			}
+			
+			finally {
+				if(out != null) {
+					out.close();
+				}
+			}
 
 
 			// Send response to browser.

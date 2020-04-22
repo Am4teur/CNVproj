@@ -91,11 +91,14 @@ public class WebServer {
 			// Get user-provided flags.
 			final SolverArgumentParser ap = new SolverArgumentParser(args);
 
+			ICount.clearCounters();
+
 			// Create solver instance from factory.
 			final Solver s = SolverFactory.getInstance().makeSolver(ap);
 
 			//Solve sudoku puzzle
 			JSONArray solution = s.solveSudoku();
+			System.out.println(ICount.getICount());
 
 
 			BufferedWriter out = null;
@@ -107,7 +110,10 @@ public class WebServer {
 				System.out.println("PRINT TO FILE");
 				out.write("\n");
 				out.write("> Query:\t" + query + "\n");
-				out.write("> Counter:\t" + ICount.getICount());
+				out.write("> ICounter:\t" + ICount.getICount() + "\n");
+				out.write("> BCounter:\t" + ICount.getBCount() + "\n");
+				out.write("> MCounter:\t" + ICount.getMCount() + "\n");
+				out.write("\n");
 				System.out.println("PRINT TO FILE DONE");
 			}
 			

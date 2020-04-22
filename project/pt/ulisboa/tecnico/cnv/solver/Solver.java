@@ -1,6 +1,12 @@
 package pt.ulisboa.tecnico.cnv.solver;
 
+import BIT.ICount;
 import org.json.JSONArray;
+
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 
 public class Solver {
 
@@ -58,13 +64,13 @@ public class Solver {
         }
 
 
-        //final long startTime = System.nanoTime();
+        final long startTime = System.nanoTime();
         strategy.runSolver(this);
-        //final long elapsedTime = System.nanoTime() - startTime;
+        final long elapsedTime = System.nanoTime() - startTime;
 
         if(ap.isDebugging()) {
             strategy.printSolution();
-            //System.out.println(" Solution found in " + (elapsedTime*1e-6) + " ms");
+            System.out.println(" Solution found in " + (elapsedTime*1e-6) + " ms");
         }
 
         int[][] solution = strategy.getSolution();

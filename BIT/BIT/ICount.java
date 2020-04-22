@@ -21,7 +21,7 @@ import java.util.*;
 
 public class ICount {
     private static PrintStream out = null;
-    private static int i_count = 0, b_count = 0, m_count = 0;
+    private static long i_count = 0, b_count = 0, m_count = 0;
     
     /* main reads in all the files class files present in the input directory,
      * instruments them, and outputs them to the specified output directory.
@@ -68,15 +68,21 @@ public class ICount {
     }
 
 
-    public static synchronized int getBCount() {
+    public static synchronized void clearCounters() {
+        b_count = 0;
+        i_count = 0;
+        m_count = 0;
+    }
+
+    public static synchronized long getBCount() {
         return b_count;
     }
 
-    public static synchronized int getICount() {
+    public static synchronized long getICount() {
         return i_count;
     }
 
-    public static synchronized int getMCount() {
+    public static synchronized long getMCount() {
 		return m_count;
     }
 

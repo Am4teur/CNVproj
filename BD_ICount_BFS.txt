@@ -1,0 +1,70 @@
+> Query:	s=BFS&un=81&n1=9&n2=9&i=SUDOKU_PUZZLE_9x9_101
+> ICounter:	279986793
+> BCounter:	119984549
+> MCounter:	891
+
+
+> Query:	s=BFS&un=81&n1=9&n2=9&i=SUDOKU_PUZZLE_9x9_102
+> ICounter:	257342677
+> BCounter:	110280433
+> MCounter:	850
+
+
+> Query:	s=BFS&un=81&n1=9&n2=9&i=SUDOKU_PUZZLE_9x9_103
+> ICounter:	405558569
+> BCounter:	173798191
+> MCounter:	1105
+
+
+> Query:	s=BFS&un=81&n1=9&n2=9&i=SUDOKU_PUZZLE_9x9_104
+> ICounter:	199704744
+> BCounter:	85579478
+> MCounter:	763
+
+
+> Query:	s=BFS&un=81&n1=9&n2=9&i=SUDOKU_PUZZLE_9x9_105
+> ICounter:	255284244
+> BCounter:	109398294
+> MCounter:	847
+
+
+> Query:	s=BFS&un=256&n1=16&n2=16&i=SUDOKU_PUZZLE_16x16_01
+> ICounter:	1087061540
+> BCounter:	465834950
+> MCounter:	2921
+
+
+> Query:	s=BFS&un=256&n1=16&n2=16&i=SUDOKU_PUZZLE_16x16_02
+> ICounter:	2579584852
+> BCounter:	1105440578
+> MCounter:	5333
+
+
+> Query:	s=BFS&un=256&n1=16&n2=16&i=SUDOKU_PUZZLE_16x16_03
+> ICounter:	1694355032
+> BCounter:	726085945
+> MCounter:	3905
+
+
+> Query:	s=BFS&un=256&n1=16&n2=16&i=SUDOKU_PUZZLE_16x16_04
+> ICounter:	1369104974
+> BCounter:	586700450
+> MCounter:	3370
+
+
+> Query:	s=BFS&un=625&n1=25&n2=25&i=SUDOKU_PUZZLE_16x16_05 (ERRO)
+> ICounter:	1235286724 (ERRO)
+> BCounter:	529356405 (ERRO)
+> MCounter:	4604 (ERRO)
+
+
+> Query:	s=BFS&un=625&n1=25&n2=25&i=SUDOKU_PUZZLE_16x16_06
+> ICounter:	3868754211
+> BCounter:	1657820300
+> MCounter:	8858
+
+
+> Query:	s=BFS&un=625&n1=25&n2=25&i=SUDOKU_PUZZLE_25x25_01
+> ICounter:	3868754211
+> BCounter:	1657820300
+> MCounter:	8858

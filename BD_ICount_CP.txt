@@ -1,10 +1,3 @@
-
-> Query:	s=CP&un=81&n1=9&n2=9&i=SUDOKU_PUZZLE_9x9_101
-> ICounter:	242925929
-> BCounter:	104101995
-> MCounter:	712
-
-
 > Query:	s=CP&un=81&n1=9&n2=9&i=SUDOKU_PUZZLE_9x9_101
 > ICounter:	242925929
 > BCounter:	104101995
@@ -59,12 +52,6 @@
 > MCounter:	2429
 
 
-> Query:	s=CP&un=625&n1=25&n2=25&i=SUDOKU_PUZZLE_16x16_05
-> ICounter:	8955307981
-> BCounter:	3837633124
-> MCounter:	12192
-
-
 > Query:	s=CP&un=625&n1=25&n2=25&i=SUDOKU_PUZZLE_16x16_06
 > ICounter:	4074278913
 > BCounter:	1745930544
@@ -75,10 +62,3 @@
 > ICounter:	4074278913
 > BCounter:	1745930544
 > MCounter:	7307
-
-
-> Query:	s=BFS&un=625&n1=25&n2=25&i=SUDOKU_PUZZLE_16x16_05
-> ICounter:	1235286724
-> BCounter:	529356405
-> MCounter:	4604
-

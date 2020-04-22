@@ -17,12 +17,15 @@ package BIT;
 import BIT.highBIT.*;
 import java.io.*;
 import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
 
 
-public class ICount {
+    public class ICount {
     private static PrintStream out = null;
-    private static long i_count = 0, b_count = 0, m_count = 0;
-    
+    private static ConcurrentHashMap<Long, Long> i_count_map = new ConcurrentHashMap<>();
+    private static ConcurrentHashMap<Long, Long> b_count_map = new ConcurrentHashMap<>();
+    private static ConcurrentHashMap<Long, Long> m_count_map = new ConcurrentHashMap<>();
+
     /* main reads in all the files class files present in the input directory,
      * instruments them, and outputs them to the specified output directory.
      */
@@ -54,36 +57,45 @@ public class ICount {
     }
     
     public static synchronized void printICount(String foo) {
-        System.out.println(i_count + " instructions in " + b_count + " basic blocks were executed in " + m_count + " methods.");
+        System.out.println("printICount disabled!");
+//        System.out.println(i_count + " instructions in " + b_count + " basic blocks were executed in " + m_count + " methods.");
     }
     
 
-    public static synchronized void count(int incr) {
-        i_count += incr;
-        b_count++;
+    public static void count(int incr) {
+        long thread_id = Thread.currentThread().getId();
+        i_count_map.put(thread_id, i_count_map.get(thread_id) + incr);
+        b_count_map.put(thread_id, b_count_map.get(thread_id) + 1);
+
+//        i_count += incr;
+//        b_count++;
     }
 
-    public static synchronized void mcount(int incr) {
-		m_count++;
+    public static void mcount(int incr) {
+        long thread_id = Thread.currentThread().getId();
+        m_count_map.put(thread_id, m_count_map.get(thread_id) + 1);
+
+//        m_count++;
     }
 
 
-    public static synchronized void clearCounters() {
-        b_count = 0;
-        i_count = 0;
-        m_count = 0;
+    public static void clearCounters(long thread_id) {
+//        long thread_id = Thread.currentThread().getId();
+        i_count_map.put(thread_id, 0L);
+        b_count_map.put(thread_id, 0L);
+        m_count_map.put(thread_id, 0L);
     }
 
-    public static synchronized long getBCount() {
-        return b_count;
+    public static long getBCount(long thread_id) {
+        return b_count_map.get(thread_id);
     }
 
-    public static synchronized long getICount() {
-        return i_count;
+    public static long getICount(long thread_id) {
+        return i_count_map.get(thread_id);
     }
 
-    public static synchronized long getMCount() {
-		return m_count;
+    public static long getMCount(long thread_id) {
+		return m_count_map.get(thread_id);
     }
 
 

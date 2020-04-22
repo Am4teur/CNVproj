@@ -36,7 +36,6 @@ public class WebServer {
 		// be aware! infinite pool of threads!
 		server.setExecutor(Executors.newCachedThreadPool());
 		server.start();
-
 		System.out.println("Server started at: " + server.getAddress().toString());
 	}
 
@@ -61,6 +60,9 @@ public class WebServer {
 	static class MyHandler implements HttpHandler {
 		@Override
 		public void handle(final HttpExchange t) throws IOException {
+			long thread_id = Thread.currentThread().getId();
+			ICount.clearCounters(thread_id);
+
 
 			// Get the query.
 			final String query = t.getRequestURI().getQuery();
@@ -91,14 +93,14 @@ public class WebServer {
 			// Get user-provided flags.
 			final SolverArgumentParser ap = new SolverArgumentParser(args);
 
-			ICount.clearCounters();
+
 
 			// Create solver instance from factory.
 			final Solver s = SolverFactory.getInstance().makeSolver(ap);
 
 			//Solve sudoku puzzle
 			JSONArray solution = s.solveSudoku();
-			System.out.println(ICount.getICount());
+			System.out.println(ICount.getICount(thread_id));
 
 
 			BufferedWriter out = null;
@@ -110,9 +112,9 @@ public class WebServer {
 				System.out.println("PRINT TO FILE");
 				out.write("\n");
 				out.write("> Query:\t" + query + "\n");
-				out.write("> ICounter:\t" + ICount.getICount() + "\n");
-				out.write("> BCounter:\t" + ICount.getBCount() + "\n");
-				out.write("> MCounter:\t" + ICount.getMCount() + "\n");
+				out.write("> ICounter:\t" + ICount.getICount(thread_id) + "\n");
+				out.write("> BCounter:\t" + ICount.getBCount(thread_id) + "\n");
+				out.write("> MCounter:\t" + ICount.getMCount(thread_id) + "\n");
 				out.write("\n");
 				System.out.println("PRINT TO FILE DONE");
 			}

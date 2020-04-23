@@ -1,0 +1,86 @@
+> Query:	s=CP&un=81&n1=9&n2=9&i=SUDOKU_PUZZLE_9x9_101
+Load Store Summary:
+Field load:      3187
+Field store: 20
+Regular load: 34720820
+Regular store: 34696592
+
+
+> Query:	s=CP&un=81&n1=9&n2=9&i=SUDOKU_PUZZLE_9x9_102
+Load Store Summary:
+Field load:      3384
+Field store: 7
+Regular load: 36780316
+Regular store: 36754825
+
+
+> Query:	s=CP&un=81&n1=9&n2=9&i=SUDOKU_PUZZLE_9x9_103
+Load Store Summary:
+Field load:      4248
+Field store: 7
+Regular load: 50018871
+Regular store: 49986390
+
+
+> Query:	s=CP&un=81&n1=9&n2=9&i=SUDOKU_PUZZLE_9x9_104
+Load Store Summary:
+Field load:      3260
+Field store: 7
+Regular load: 33838708
+Regular store: 33814510
+
+
+> Query:	s=CP&un=81&n1=9&n2=9&i=SUDOKU_PUZZLE_9x9_105
+Load Store Summary:
+Field load:      3409
+Field store: 7
+Regular load: 39133438
+Regular store: 39107118
+
+
+> Query:	s=CP&un=256&n1=16&n2=16&i=SUDOKU_PUZZLE_16x16_01
+Load Store Summary:
+Field load:      22171
+Field store: 7
+Regular load: 188326251
+Regular store: 188183264
+
+
+> Query:	s=CP&un=256&n1=16&n2=16&i=SUDOKU_PUZZLE_16x16_02
+Load Store Summary:
+Field load:      42453
+Field store: 7
+Regular load: 392224286
+Regular store: 391949165
+
+
+> Query:	s=CP&un=256&n1=16&n2=16&i=SUDOKU_PUZZLE_16x16_03
+Load Store Summary:
+Field load:      17629
+Field store: 7
+Regular load: 148015624
+Regular store: 147900599
+
+
+> Query:	s=CP&un=256&n1=16&n2=16&i=SUDOKU_PUZZLE_16x16_04
+Load Store Summary:
+Field load:      17799
+Field store: 7
+Regular load: 153310437
+Regular store: 153193201
+
+
+> Query:	s=CP&un=625&n1=25&n2=25&i=SUDOKU_PUZZLE_16x16_06
+Load Store Summary:
+Field load:      84744
+Field store: 7
+Regular load: 582387277
+Regular store: 581896328
+
+
+> Query:	s=CP&un=625&n1=25&n2=25&i=SUDOKU_PUZZLE_25x25_01
+Load Store Summary:
+Field load:      84744
+Field store: 7
+Regular load: 582387277
+Regular store: 581896328

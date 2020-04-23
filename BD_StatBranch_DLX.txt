@@ -1,0 +1,53 @@
+> Query:	s=DLX&un=81&n1=9&n2=9&i=SUDOKU_PUZZLE_9x9_101
+Taken: 78277395
+Not Taken: 389999
+
+
+> Query:	s=DLX&un=81&n1=9&n2=9&i=SUDOKU_PUZZLE_9x9_102
+Taken: 78277451
+Not Taken: 390007
+
+
+> Query:	s=DLX&un=81&n1=9&n2=9&i=SUDOKU_PUZZLE_9x9_103
+Taken: 78277558
+Not Taken: 390021
+
+
+> Query:	s=DLX&un=81&n1=9&n2=9&i=SUDOKU_PUZZLE_9x9_104
+Taken: 78277313
+Not Taken: 389990
+
+
+> Query:	s=DLX&un=81&n1=9&n2=9&i=SUDOKU_PUZZLE_9x9_105
+Taken: 78277507
+Not Taken: 390013
+
+
+> Query:	s=DLX&un=256&n1=16&n2=16&i=SUDOKU_PUZZLE_16x16_01
+Taken: 247891521
+Not Taken: 6843205
+
+
+> Query:	s=DLX&un=256&n1=16&n2=16&i=SUDOKU_PUZZLE_16x16_02
+Taken: 247891592
+Not Taken: 6843341
+
+
+> Query:	s=DLX&un=256&n1=16&n2=16&i=SUDOKU_PUZZLE_16x16_03
+Taken: 247891375
+Not Taken: 6843345
+
+
+> Query:	s=DLX&un=256&n1=16&n2=16&i=SUDOKU_PUZZLE_16x16_04
+Taken: 247891281
+Not Taken: 6843314
+
+
+> Query:	s=DLX&un=625&n1=25&n2=25&i=SUDOKU_PUZZLE_16x16_06
+Taken: 641904589
+Not Taken: 63880943
+
+
+> Query:	s=DLX&un=625&n1=25&n2=25&i=SUDOKU_PUZZLE_25x25_01
+Taken: 641904589
+Not Taken: 63880943

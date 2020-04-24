@@ -64,8 +64,8 @@ public class WebServer {
 //			ICount.clearCounters(thread_id); // fixme Icount
 //			StatisticsTool.clear_dyn_counters(thread_id); // fixme StatisticsTool -Dyn
 //			StatisticsTool.clearAllocCounter(thread_id); // fixme StatisticsTool -Alloc
-//			StatisticsTool.clear_LSCounter(thread_id); // fixme StatisticsTool -LS
-			StatisticsTool.clearBranchCounter(thread_id); // fixme StatisticsTool -branch
+			StatisticsTool.clear_LSCounter(thread_id); // fixme StatisticsTool -LS
+//			StatisticsTool.clearBranchCounter(thread_id); // fixme StatisticsTool -branch
 
 
 			// Get the query.
@@ -94,24 +94,29 @@ public class WebServer {
 				args[i] = arg;
 				i++;
 			}
-			System.out.println("reofroe0");
 
 			// Get user-provided flags.
 			final SolverArgumentParser ap = new SolverArgumentParser(args);
 
 
-			System.out.println("reofroe1");
 
 			// Create solver instance from factory.
 			final Solver s = SolverFactory.getInstance().makeSolver(ap);
-			System.out.println("reofroe2");
 
+
+			final long startTime = System.nanoTime();
 			//Solve sudoku puzzle
 			JSONArray solution = s.solveSudoku();
-			System.out.println("reofroe3");
-
+			final long elapsedTime = System.nanoTime() - startTime;
 
 			BufferedWriter out = null;
+
+			String print = "";
+			print += "Time:       " + (elapsedTime*1e-6) + " ms\n";
+			print += "Field load: " + StatisticsTool.getLSCount_fieldloadcount(thread_id) + "\n";
+
+			System.out.println(print);
+
 
 			try {
 				File file = new File("tempBD.txt");
@@ -120,6 +125,7 @@ public class WebServer {
 				System.out.println("PRINT TO FILE");
 				out.write("\n");
 				out.write("> Query:\t" + query + "\n");
+				out.write(print);
 
 //				out.write("Number of methods:      " + StatisticsTool.get_dyn_method_count(thread_id) + "\n"); // fixme StatisticsTool -dym
 //				out.write("Number of basic blocks: " + StatisticsTool.get_dyn_bb_count(thread_id) + "\n"); // fixme StatisticsTool -dym
@@ -131,14 +137,14 @@ public class WebServer {
 //				out.write("anewarray: " + StatisticsTool.getAllocCount_anewarraycount(thread_id) + "\n"); // fixme StatisticsTool -Alloc
 //				out.write("multianewarray: " + StatisticsTool.getAllocCount_multianewarraycount(thread_id) + "\n"); // fixme StatisticsTool -Alloc
 
-//				out.write("Load Store Summary:\n");
+//				out.write("Time:" + elapsedTime + "\n");
 //				out.write("Field load:      " + StatisticsTool.getLSCount_fieldloadcount(thread_id) + "\n"); // fixme StatisticsTool -LS
 //				out.write("Field store: " + StatisticsTool.getLSCount_fieldstorecount(thread_id) + "\n"); // fixme StatisticsTool -LS
 //				out.write("Regular load: " + StatisticsTool.getLSCount_loadcount(thread_id) + "\n"); // fixme StatisticsTool -LS
 //				out.write("Regular store: " + StatisticsTool.getLSCount_storecount(thread_id) + "\n"); // fixme StatisticsTool -LS
 
-				out.write("Taken: " + StatisticsTool.getTakenCounter(thread_id) + "\n"); // fixme StatisticsTool -branch
-				out.write("Not Taken: " + StatisticsTool.getNotTakenCounter(thread_id) + "\n"); // fixme StatisticsTool -branch
+//				out.write("Taken: " + StatisticsTool.getTakenCounter(thread_id) + "\n"); // fixme StatisticsTool -branch
+//				out.write("Not Taken: " + StatisticsTool.getNotTakenCounter(thread_id) + "\n"); // fixme StatisticsTool -branch
 
 //				out.write("> ICounter:\t" + ICount.getICount(thread_id) + "\n"); // fixme Icount
 //				out.write("> BCounter:\t" + ICount.getBCount(thread_id) + "\n");// fixme Icount

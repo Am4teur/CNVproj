@@ -31,7 +31,7 @@ The Frontend is a website where you can choose a sudoku to be solved, from a pre
 
 ### Number of Instances
 
-The number of instances is determined by the Load Balancer. More detailed specifications in the [System Configuration >Load Balancer](##Load Balancer "Goto Load Balancer") section.
+The number of instances is determined by the Load Balancer. More detailed specifications in the [System Configuration >Load Balancer](##Load-Balancer) section.
 
 
 ### Webserver

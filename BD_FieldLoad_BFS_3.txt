@@ -1,0 +1,58 @@
+> Query:	s=BFS&un=81&n1=9&n2=9&i=SUDOKU_PUZZLE_9x9_101
+Time:       1278.1590999999999 ms
+Field load: 2741
+
+
+> Query:	s=BFS&un=81&n1=9&n2=9&i=SUDOKU_PUZZLE_9x9_102
+Time:       1151.2077 ms
+Field load: 2617
+
+
+> Query:	s=BFS&un=81&n1=9&n2=9&i=SUDOKU_PUZZLE_9x9_103
+Time:       1807.1957 ms
+Field load: 3375
+
+
+> Query:	s=BFS&un=81&n1=9&n2=9&i=SUDOKU_PUZZLE_9x9_104
+Time:       894.5276 ms
+Field load: 2424
+
+
+> Query:	s=BFS&un=81&n1=9&n2=9&i=SUDOKU_PUZZLE_9x9_105
+Time:       1105.3429999999998 ms
+Field load: 2616
+
+
+> Query:	s=BFS&un=256&n1=16&n2=16&i=SUDOKU_PUZZLE_16x16_01
+Time:       4599.6612 ms
+Field load: 15189
+
+
+> Query:	s=BFS&un=256&n1=16&n2=16&i=SUDOKU_PUZZLE_16x16_02
+Time:       10667.3558 ms
+Field load: 28626
+
+
+> Query:	s=BFS&un=256&n1=16&n2=16&i=SUDOKU_PUZZLE_16x16_03
+Time:       7019.788299999999 ms
+Field load: 19920
+
+
+> Query:	s=BFS&un=256&n1=16&n2=16&i=SUDOKU_PUZZLE_16x16_04
+Time:       5735.9181 ms
+Field load: 18380
+
+
+> Query:	s=BFS&un=625&n1=25&n2=25&i=SUDOKU_PUZZLE_16x16_05
+Time:       5287.1273 ms
+Field load: 14531
+
+
+> Query:	s=BFS&un=625&n1=25&n2=25&i=SUDOKU_PUZZLE_16x16_06
+Time:       16107.8035 ms
+Field load: 74036
+
+
+> Query:	s=BFS&un=625&n1=25&n2=25&i=SUDOKU_PUZZLE_25x25_01
+Time:       16080.458299999998 ms
+Field load: 74036

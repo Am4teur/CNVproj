@@ -45,7 +45,7 @@ Methods:         2423
 
 > Query:	s=CP&un=625&n1=25&n2=25&i=SUDOKU_PUZZLE_16x16_05
 Time:            37071.085 ms
-Methods:         12186
+#Methods:         12186
 
 
 > Query:	s=CP&un=625&n1=25&n2=25&i=SUDOKU_PUZZLE_16x16_06

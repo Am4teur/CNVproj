@@ -52,12 +52,6 @@
 > MCounter:	3370
 
 
-> Query:	s=BFS&un=625&n1=25&n2=25&i=SUDOKU_PUZZLE_16x16_05 (ERRO)
-> ICounter:	1235286724 (ERRO)
-> BCounter:	529356405 (ERRO)
-> MCounter:	4604 (ERRO)
-
-
 > Query:	s=BFS&un=625&n1=25&n2=25&i=SUDOKU_PUZZLE_16x16_06
 > ICounter:	3868754211
 > BCounter:	1657820300

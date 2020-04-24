@@ -12,7 +12,7 @@
  * University of Colorado at Boulder (303) 492-5647.
  */
 
-package BIT;
+package tests;
 
 import BIT.highBIT.*;
 import java.io.*;

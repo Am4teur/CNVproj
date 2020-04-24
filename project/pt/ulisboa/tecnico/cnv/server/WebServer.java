@@ -25,10 +25,7 @@ public class WebServer {
 
 	public static void main(final String[] args) throws Exception {
 
-		//final HttpServer server = HttpServer.create(new InetSocketAddress("127.0.0.1", 8000), 0);
-
 		final HttpServer server = HttpServer.create(new InetSocketAddress(8000), 0);
-
 
 		server.createContext("/", new Hello());
 		server.createContext("/sudoku", new MyHandler());
@@ -61,12 +58,7 @@ public class WebServer {
 		@Override
 		public void handle(final HttpExchange t) throws IOException {
 			long thread_id = Thread.currentThread().getId();
-//			ICount.clearCounters(thread_id); // fixme Icount
-//			StatisticsTool.clear_dyn_counters(thread_id); // fixme StatisticsTool -Dyn
-//			StatisticsTool.clearAllocCounter(thread_id); // fixme StatisticsTool -Alloc
-//			StatisticsTool.clearBranchCounter(thread_id); // fixme StatisticsTool -branch
-
-//			LoadStore.clear_LSCounter(thread_id); // fixme LoadStore
+//			LoadStore.clear_LSCounter(thread_id);
 			Methods.clear_dyn_counters(thread_id); //fixme Methods
 
 			// Get the query.
@@ -113,9 +105,10 @@ public class WebServer {
 			BufferedWriter out = null;
 
 			String print = "";
-			print += "Time:       " + (elapsedTime*1e-6) + " ms\n";
-//			print += "Field load: " + LoadStore.getLSCount_fieldloadcount(thread_id) + "\n";
-			print += "Methods:    " + Methods.get_dyn_method_count(thread_id) + "\n";
+//			print += "Time:            " + (elapsedTime*1e-6) + " ms\n";
+//			print += "Field load:      " + LoadStore.getLSCount_fieldloadcount(thread_id) + "\n";
+			print += "Methods:         " + Methods.get_dyn_method_count(thread_id) + "\n";
+
 			System.out.println(print);
 
 
@@ -123,47 +116,13 @@ public class WebServer {
 				File file = new File("tempBD.txt");
 				FileWriter fstream = new FileWriter(file, true); //true tells to append data.
 				out = new BufferedWriter(fstream);
-				System.out.println("PRINT TO FILE");
 				out.write("\n");
 				out.write("> Query:\t" + query + "\n");
 				out.write(print);
-
-//				out.write("Number of methods:      " + StatisticsTool.get_dyn_method_count(thread_id) + "\n"); // fixme StatisticsTool -dym
-//				out.write("Number of basic blocks: " + StatisticsTool.get_dyn_bb_count(thread_id) + "\n"); // fixme StatisticsTool -dym
-//				out.write("Number of instructions: " + StatisticsTool.get_dyn_instr_count(thread_id) + "\n"); // fixme StatisticsTool -dym
-
-//				out.write("Allocations summary:\n");
-//				out.write("new:      " + StatisticsTool.getAllocCount_newcount(thread_id) + "\n"); // fixme StatisticsTool -Alloc
-//				out.write("newarray: " + StatisticsTool.getAllocCount_newarraycount(thread_id) + "\n"); // fixme StatisticsTool -Alloc
-//				out.write("anewarray: " + StatisticsTool.getAllocCount_anewarraycount(thread_id) + "\n"); // fixme StatisticsTool -Alloc
-//				out.write("multianewarray: " + StatisticsTool.getAllocCount_multianewarraycount(thread_id) + "\n"); // fixme StatisticsTool -Alloc
-
-//				out.write("Time:" + elapsedTime + "\n");
-//				out.write("Field load:      " + StatisticsTool.getLSCount_fieldloadcount(thread_id) + "\n"); // fixme StatisticsTool -LS
-//				out.write("Field store: " + StatisticsTool.getLSCount_fieldstorecount(thread_id) + "\n"); // fixme StatisticsTool -LS
-//				out.write("Regular load: " + StatisticsTool.getLSCount_loadcount(thread_id) + "\n"); // fixme StatisticsTool -LS
-//				out.write("Regular store: " + StatisticsTool.getLSCount_storecount(thread_id) + "\n"); // fixme StatisticsTool -LS
-
-//				out.write("Taken: " + StatisticsTool.getTakenCounter(thread_id) + "\n"); // fixme StatisticsTool -branch
-//				out.write("Not Taken: " + StatisticsTool.getNotTakenCounter(thread_id) + "\n"); // fixme StatisticsTool -branch
-
-//				out.write("> ICounter:\t" + ICount.getICount(thread_id) + "\n"); // fixme Icount
-//				out.write("> BCounter:\t" + ICount.getBCount(thread_id) + "\n");// fixme Icount
-//				out.write("> MCounter:\t" + ICount.getMCount(thread_id) + "\n");// fixme Icount
 				out.write("\n");
-
-
-
-
-
-				System.out.println("PRINT TO FILE DONE");
-			}
-			
-			catch (IOException e) {
+			} catch (IOException e) {
 				System.err.println("Error: " + e.getMessage());
-			}
-			
-			finally {
+			} finally {
 				if(out != null) {
 					out.close();
 				}

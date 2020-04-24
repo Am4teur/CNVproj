@@ -81,9 +81,9 @@ public class Methods {
 		dyn_method_count_map.put(thread_id, dyn_method_count_map.get(thread_id) + incr);
 	}
 
-	public static void main(String argv[])
+	public static void main(String[] argv)
 	{
-		if (argv.length < 2) {
+		if (argv.length != 2) {
 			printUsage();
 		}
 		else{

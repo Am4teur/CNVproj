@@ -38,5 +38,9 @@ Time:       5833.6138 ms
 Time:       5439.7411999999995 ms
 
 
+> Query:	s=BFS&un=625&n1=25&n2=25&i=SUDOKU_PUZZLE_16x16_06
+Time:       16052.239599999999 ms
+
+
 > Query:	s=BFS&un=625&n1=25&n2=25&i=SUDOKU_PUZZLE_25x25_01
 Time:       16229.8339 ms

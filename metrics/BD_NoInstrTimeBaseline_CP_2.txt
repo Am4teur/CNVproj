@@ -1,3 +1,4 @@
+
 > Query:	s=CP&un=81&n1=9&n2=9&i=SUDOKU_PUZZLE_9x9_101
 Time:       1107.2264 ms
 

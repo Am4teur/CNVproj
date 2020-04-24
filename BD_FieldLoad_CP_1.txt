@@ -1,0 +1,58 @@
+> Query:	s=CP&un=81&n1=9&n2=9&i=SUDOKU_PUZZLE_9x9_101
+Time:       1160.5516 ms
+Field load: 3187
+
+
+> Query:	s=CP&un=81&n1=9&n2=9&i=SUDOKU_PUZZLE_9x9_102
+Time:       1293.2282 ms
+Field load: 3384
+
+
+> Query:	s=CP&un=81&n1=9&n2=9&i=SUDOKU_PUZZLE_9x9_103
+Time:       1668.7682 ms
+Field load: 4248
+
+
+> Query:	s=CP&un=81&n1=9&n2=9&i=SUDOKU_PUZZLE_9x9_104
+Time:       1106.8687 ms
+Field load: 3260
+
+
+> Query:	s=CP&un=81&n1=9&n2=9&i=SUDOKU_PUZZLE_9x9_105
+Time:       1304.1705 ms
+Field load: 3409
+
+
+> Query:	s=CP&un=256&n1=16&n2=16&i=SUDOKU_PUZZLE_16x16_01
+Time:       6180.140399999999 ms
+Field load: 22171
+
+
+> Query:	s=CP&un=256&n1=16&n2=16&i=SUDOKU_PUZZLE_16x16_02
+Time:       12064.553699999999 ms
+Field load: 42453
+
+
+> Query:	s=CP&un=256&n1=16&n2=16&i=SUDOKU_PUZZLE_16x16_03
+Time:       4766.282099999999 ms
+Field load: 17629
+
+
+> Query:	s=CP&un=256&n1=16&n2=16&i=SUDOKU_PUZZLE_16x16_04
+Time:       4973.572999999999 ms
+Field load: 17799
+
+
+> Query:	s=CP&un=625&n1=25&n2=25&i=SUDOKU_PUZZLE_16x16_05
+Time:       37976.4992 ms
+Field load: 163062
+
+
+> Query:	s=CP&un=625&n1=25&n2=25&i=SUDOKU_PUZZLE_16x16_06
+Time:       17480.7271 ms
+Field load: 84744
+
+
+> Query:	s=CP&un=625&n1=25&n2=25&i=SUDOKU_PUZZLE_25x25_01
+Time:       17413.2314 ms
+Field load: 84744

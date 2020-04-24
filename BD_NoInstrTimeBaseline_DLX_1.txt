@@ -1,0 +1,47 @@
+> Query:	s=DLX&un=81&n1=9&n2=9&i=SUDOKU_PUZZLE_9x9_101
+Time:       2300.0785 ms
+
+
+> Query:	s=DLX&un=81&n1=9&n2=9&i=SUDOKU_PUZZLE_9x9_102
+Time:       2366.7817 ms
+
+
+> Query:	s=DLX&un=81&n1=9&n2=9&i=SUDOKU_PUZZLE_9x9_103
+Time:       2314.7724 ms
+
+
+> Query:	s=DLX&un=81&n1=9&n2=9&i=SUDOKU_PUZZLE_9x9_104
+Time:       2381.2468 ms
+
+
+> Query:	s=DLX&un=81&n1=9&n2=9&i=SUDOKU_PUZZLE_9x9_105
+Time:       2341.8991 ms
+
+
+> Query:	s=DLX&un=256&n1=16&n2=16&i=SUDOKU_PUZZLE_16x16_01
+Time:       7540.9583999999995 ms
+
+
+> Query:	s=DLX&un=256&n1=16&n2=16&i=SUDOKU_PUZZLE_16x16_02
+Time:       7433.1509 ms
+
+
+> Query:	s=DLX&un=256&n1=16&n2=16&i=SUDOKU_PUZZLE_16x16_03
+Time:       7477.9891 ms
+
+
+> Query:	s=DLX&un=256&n1=16&n2=16&i=SUDOKU_PUZZLE_16x16_04
+Time:       7614.901599999999 ms
+
+
+> Query:	s=DLX&un=625&n1=25&n2=25&i=SUDOKU_PUZZLE_16x16_05
+Time:       1308.8479 ms
+
+
+> Query:	s=DLX&un=625&n1=25&n2=25&i=SUDOKU_PUZZLE_16x16_06
+Time:       17254.315899999998 ms
+
+
+
+> Query:	s=DLX&un=625&n1=25&n2=25&i=SUDOKU_PUZZLE_25x25_01
+Time:       17238.5393 ms

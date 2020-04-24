@@ -27,7 +27,7 @@ public class WebServer {
 
 		//final HttpServer server = HttpServer.create(new InetSocketAddress("127.0.0.1", 8000), 0);
 
-		final HttpServer server = HttpServer.create(new InetSocketAddress( 8000), 0);
+		final HttpServer server = HttpServer.create(new InetSocketAddress(8000), 0);
 
 
 		server.createContext("/", new Hello());
@@ -64,9 +64,10 @@ public class WebServer {
 //			ICount.clearCounters(thread_id); // fixme Icount
 //			StatisticsTool.clear_dyn_counters(thread_id); // fixme StatisticsTool -Dyn
 //			StatisticsTool.clearAllocCounter(thread_id); // fixme StatisticsTool -Alloc
-			StatisticsTool.clear_LSCounter(thread_id); // fixme StatisticsTool -LS
 //			StatisticsTool.clearBranchCounter(thread_id); // fixme StatisticsTool -branch
 
+//			LoadStore.clear_LSCounter(thread_id); // fixme LoadStore
+			Methods.clear_dyn_counters(thread_id); //fixme Methods
 
 			// Get the query.
 			final String query = t.getRequestURI().getQuery();
@@ -113,8 +114,8 @@ public class WebServer {
 
 			String print = "";
 			print += "Time:       " + (elapsedTime*1e-6) + " ms\n";
-			print += "Field load: " + StatisticsTool.getLSCount_fieldloadcount(thread_id) + "\n";
-
+//			print += "Field load: " + LoadStore.getLSCount_fieldloadcount(thread_id) + "\n";
+			print += "Methods:    " + Methods.get_dyn_method_count(thread_id) + "\n";
 			System.out.println(print);
 
 

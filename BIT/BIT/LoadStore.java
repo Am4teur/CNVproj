@@ -55,6 +55,7 @@ public class LoadStore {
 				String in_filename = in_dir.getAbsolutePath() + System.getProperty("file.separator") + filename;
 				String out_filename = out_dir.getAbsolutePath() + System.getProperty("file.separator") + filename;
 				ClassInfo ci = new ClassInfo(in_filename);
+				ci.addBefore("BIT/LoadStore", "initCounter", "");
 
 				for (Enumeration e = ci.getRoutines().elements(); e.hasMoreElements(); ) {
 					Routine routine = (Routine) e.nextElement();
@@ -63,7 +64,7 @@ public class LoadStore {
 						Instruction instr = (Instruction) instrs.nextElement();
 						int opcode=instr.getOpcode();
 						if (opcode == InstructionTable.getfield)
-							instr.addBefore("BIT/StatisticsTool", "LSFieldCount", new Integer(0));
+							instr.addBefore("BIT/LoadStore", "LSFieldCount", new Integer(0));
 					}
 				}
 				ci.write(out_filename);
@@ -80,7 +81,7 @@ public class LoadStore {
 		System.out.println("Regular store: " + storecount);
 	}
 
-	public static void initCounter() {
+	public static void initCounter(String s) {
 		long thread_id =Thread.currentThread().getId();
 		clear_LSCounter(thread_id);
 	}
@@ -132,24 +133,20 @@ public class LoadStore {
 		return storecount_map.get(thread_id);
 	}
 
-	public static void main(String[] argv)
-	{
+	public static void main(String[] argv) {
 		if (argv.length != 2) {
 			printUsage();
-		}
-		else {
+		} else {
 			try {
 				File in_dir = new File(argv[0]);
 				File out_dir = new File(argv[1]);
 
 				if (in_dir.isDirectory() && out_dir.isDirectory()) {
 					doLoadStore(in_dir, out_dir);
-				}
-				else {
+				} else {
 					printUsage();
 				}
-			}
-			catch (NullPointerException e) {
+			} catch (NullPointerException e) {
 				printUsage();
 			}
 		}

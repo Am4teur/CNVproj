@@ -38,9 +38,10 @@ The WebServer can receive more than 1 request concurrently, since it has a threa
 The Webserver is automatically started when the Instance is started. For that we did the following steps:
 
 1) Connected to the instance using SSH;
-2) Ran the `source java-config-rnl-vm.sh`
-2) Opened the file /etc/rc.local;
-3) Changed the Java Options, the Classpath and the command to run the Webserver;
+2) Ran the command `source java-config-rnl-vm.sh` in the ~/cnv/BIT folder;
+3) Opened the file /etc/rc.local;
+4) Changed the Java Options, the Classpath and the command to run the Webserver;
+5) Ran the command `chmod +x /etc/rc.d/rc.local`;
 
 The final changes were the following:
 ```

@@ -1,0 +1,85 @@
+
+
+> Query:	s=CP&un=81&n1=9&n2=9&i=SUDOKU_PUZZLE_9x9_101
+Time:    4857.0072 ms
+Inst:    242926602
+BB:      104102195
+Methods: 765
+
+
+> Query:	s=CP&un=81&n1=9&n2=9&i=SUDOKU_PUZZLE_9x9_102
+Time:    4320.053 ms
+Inst:    257336623
+BB:      110277533
+Methods: 763
+
+
+> Query:	s=CP&un=81&n1=9&n2=9&i=SUDOKU_PUZZLE_9x9_103
+Time:    6013.8128 ms
+Inst:    349971647
+BB:      149975769
+Methods: 865
+
+
+> Query:	s=CP&un=81&n1=9&n2=9&i=SUDOKU_PUZZLE_9x9_104
+Time:    5805.1696 ms
+Inst:    236751935
+BB:      101455833
+Methods: 747
+
+
+> Query:	s=CP&un=81&n1=9&n2=9&i=SUDOKU_PUZZLE_9x9_105
+Time:    4979.721 ms
+Inst:    273804343
+BB:      117334820
+Methods: 787
+
+
+> Query:	s=CP&un=256&n1=16&n2=16&i=SUDOKU_PUZZLE_16x16_01
+Time:    27217.133299999998 ms
+Inst:    1317576947
+BB:      564621865
+Methods: 2716
+
+
+> Query:	s=CP&un=256&n1=16&n2=16&i=SUDOKU_PUZZLE_16x16_02
+Time:    46218.29 ms
+Inst:    2744203804
+BB:      1175984824
+Methods: 4310
+
+
+> Query:	s=CP&un=256&n1=16&n2=16&i=SUDOKU_PUZZLE_16x16_03
+Time:    47722.931899999996 ms
+Inst:    2744203804
+BB:      1175984824
+Methods: 4310
+
+
+> Query:	s=CP&un=256&n1=16&n2=16&i=SUDOKU_PUZZLE_16x16_04
+Time:    17742.5781 ms
+Inst:    1072595365
+BB:      459638976
+Methods: 2464
+
+
+> Query:	s=CP&un=625&n1=25&n2=25&i=SUDOKU_PUZZLE_16x16_05
+Time:    159716.5865 ms
+Inst:    8955308385
+BB:      3837633276
+Methods: 12227
+
+
+> Query:	s=CP&un=625&n1=25&n2=25&i=SUDOKU_PUZZLE_16x16_06
+Time:    75208.56019999999 ms
+Inst:    4074279317
+BB:      1745930696
+Methods: 7342
+
+
+> Query:	s=CP&un=625&n1=25&n2=25&i=SUDOKU_PUZZLE_25x25_01
+Time:    76761.4443 ms
+Inst:    4074279317
+BB:      1745930696
+Methods: 7342
+

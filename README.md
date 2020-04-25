@@ -28,7 +28,7 @@ Note: All our AWS Resources are in the region "us-east-1a".
 
 ### Number of Instances
 
-The number of instances is determined by the Load Balancer. More detailed specifications in the [System Configuration >Load Balancer](#system-configuration##Load-Balancer) section.
+The number of instances is determined by the Auto Scaler. More detailed specifications in the [System Configuration >Auto Scaler](#system-configuration##auto-scaler) section.
 
 
 ### Webserver

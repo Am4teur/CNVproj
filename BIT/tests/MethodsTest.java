@@ -15,17 +15,17 @@
 // expressed or implied, about its correctness or performance.  The licensor
 // shall not be liable for any damages suffered as a result of using
 // and modifying this software.
-package BIT;
+package tests;
 
 
-import BIT.highBIT.*;
+import BIT.highBIT.ClassInfo;
+import BIT.highBIT.Routine;
 
 import java.io.File;
 import java.util.Enumeration;
-import java.util.Vector;
 import java.util.concurrent.ConcurrentHashMap;
 
-public class Methods {
+public class MethodsTest {
 
 
 	private static ConcurrentHashMap<Long, Integer> dyn_method_count_map = new ConcurrentHashMap<>();
@@ -49,13 +49,13 @@ public class Methods {
 				String in_filename = in_dir.getAbsolutePath() + System.getProperty("file.separator") + filename;
 				String out_filename = out_dir.getAbsolutePath() + System.getProperty("file.separator") + filename;
 				ClassInfo ci = new ClassInfo(in_filename);
-				if (!ci.getClassName().equals("pt/ulisboa/tecnico/cnv/solver/Solver")) continue;
-				ci.addBefore("BIT/Methods", "init_counters", "");
+				ci.addBefore("BIT/MethodsTest", "init_counters", "");
 
 
 				for (Enumeration e = ci.getRoutines().elements(); e.hasMoreElements(); ) {
 					Routine routine = (Routine) e.nextElement();
-					routine.addBefore("BIT/Methods", "dynMethodCount", new Integer(1));
+					routine.addBefore("BIT/MethodsTest", "dynMethodCount", new Integer(1));
+					routine.addBefore("BIT/MethodsTest", "test", ci.getClassName());
 				}
 				ci.write(out_filename);
 			}
@@ -69,11 +69,36 @@ public class Methods {
 
 	public static void clear_dyn_counters(long thread_id) {
 		dyn_method_count_map.put(thread_id, 0);
+		class_map.put(thread_id, new ConcurrentHashMap<String, Integer>());
+
 	}
 
 
 	public static int get_dyn_method_count(long thread_id) {
 		return dyn_method_count_map.get(thread_id);
+	}
+
+
+	private static ConcurrentHashMap<Long, ConcurrentHashMap<String, Integer>> class_map = new ConcurrentHashMap<>();
+
+	public static void test(String c) {
+		long thread_id = Thread.currentThread().getId();
+		ConcurrentHashMap<String, Integer> map = class_map.get(thread_id);
+		if (!map.containsKey(c)) map.put(c, 0);
+		map.put(c, map.get(c) + 1);
+		class_map.put(thread_id, map);
+	}
+
+	public static String getTestString(long thread_id) {
+		ConcurrentHashMap<String, Integer> map = class_map.get(thread_id);
+		int total_methods = dyn_method_count_map.get(thread_id);
+		StringBuilder res = new StringBuilder().append("Total Methods: ").append(total_methods).append("\n");
+		for (String c: map.keySet()) {
+			int c_met = map.get(c);
+			float percent = (c_met / (float)total_methods) * 100;
+			res.append(c).append(": ").append(c_met).append(" - ").append(percent).append("%\n");
+		}
+		return res.toString();
 	}
 
 

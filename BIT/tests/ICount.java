@@ -22,9 +22,9 @@ import java.util.concurrent.ConcurrentHashMap;
 
     public class ICount {
     private static PrintStream out = null;
-    private static ConcurrentHashMap<Long, Long> i_count_map = new ConcurrentHashMap<>();
-    private static ConcurrentHashMap<Long, Long> b_count_map = new ConcurrentHashMap<>();
-    private static ConcurrentHashMap<Long, Long> m_count_map = new ConcurrentHashMap<>();
+    private static HashMap<Long, Long> i_count_map = new HashMap<>();
+    private static HashMap<Long, Long> b_count_map = new HashMap<>();
+    private static HashMap<Long, Long> m_count_map = new HashMap<>();
 
     /* main reads in all the files class files present in the input directory,
      * instruments them, and outputs them to the specified output directory.

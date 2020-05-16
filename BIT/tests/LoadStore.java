@@ -15,7 +15,7 @@
 // expressed or implied, about its correctness or performance.  The licensor
 // shall not be liable for any damages suffered as a result of using
 // and modifying this software.
-package BIT;
+package tests;
 
 
 import BIT.highBIT.*;

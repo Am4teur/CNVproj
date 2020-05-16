@@ -18,7 +18,6 @@
 package tests;
 
 
-import BIT.StatisticsBranch;
 import BIT.highBIT.*;
 import java.io.File;
 import java.util.Enumeration;

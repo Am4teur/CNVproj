@@ -58,8 +58,7 @@ public class WebServer {
 		@Override
 		public void handle(final HttpExchange t) throws IOException {
 			long thread_id = Thread.currentThread().getId();
-//			LoadStore.clear_LSCounter(thread_id);
-			Methods.clear_dyn_counters(thread_id); //fixme Methods
+			Methods.clear_dyn_counters(thread_id);
 
 			// Get the query.
 			final String query = t.getRequestURI().getQuery();
@@ -105,10 +104,8 @@ public class WebServer {
 			BufferedWriter out = null;
 
 			String print = "";
-//			print += "Time:            " + (elapsedTime*1e-6) + " ms\n";
-//			print += "Field load:      " + LoadStore.getLSCount_fieldloadcount(thread_id) + "\n";
+			print += "Time:    " + (elapsedTime*1e-6) + " ms\n";
 			print += "Methods:         " + Methods.get_dyn_method_count(thread_id) + "\n";
-
 			System.out.println(print);
 
 
@@ -127,6 +124,22 @@ public class WebServer {
 					out.close();
 				}
 			}
+
+//			try {
+//				File file = new File("StempBD.txt");
+//				FileWriter fstream = new FileWriter(file, true); //true tells to append data.
+//				out = new BufferedWriter(fstream);
+//				out.write("\n");
+//				out.write("> Query:\t" + query + "\n");
+//				out.write(MethodsTest.getTestString(thread_id));
+//				out.write("\n");
+//			} catch (IOException e) {
+//				System.err.println("Error: " + e.getMessage());
+//			} finally {
+//				if(out != null) {
+//					out.close();
+//				}
+//			}
 
 
 			// Send response to browser.

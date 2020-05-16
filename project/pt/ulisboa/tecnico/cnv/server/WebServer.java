@@ -109,21 +109,21 @@ public class WebServer {
 			System.out.println(print);
 
 
-			try {
-				File file = new File("tempBD.txt");
-				FileWriter fstream = new FileWriter(file, true); //true tells to append data.
-				out = new BufferedWriter(fstream);
-				out.write("\n");
-				out.write("> Query:\t" + query + "\n");
-				out.write(print);
-				out.write("\n");
-			} catch (IOException e) {
-				System.err.println("Error: " + e.getMessage());
-			} finally {
-				if(out != null) {
-					out.close();
-				}
-			}
+//			try {
+//				File file = new File("tempBD.txt");
+//				FileWriter fstream = new FileWriter(file, true); //true tells to append data.
+//				out = new BufferedWriter(fstream);
+//				out.write("\n");
+//				out.write("> Query:\t" + query + "\n");
+//				out.write(print);
+//				out.write("\n");
+//			} catch (IOException e) {
+//				System.err.println("Error: " + e.getMessage());
+//			} finally {
+//				if(out != null) {
+//					out.close();
+//				}
+//			}
 
 //			try {
 //				File file = new File("StempBD.txt");

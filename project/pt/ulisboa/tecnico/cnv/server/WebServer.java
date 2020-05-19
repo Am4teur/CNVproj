@@ -262,13 +262,13 @@ public class WebServer {
             System.out.println("Table Description: " + tableDescription);
 
             // Add an item
-            Map<String, AttributeValue> item = newItem("Bill & Ted's Excellent Adventure", 1989, "****", "James", "Sara");
+            Map<String, AttributeValue> item = newItem("1", "1", 9, "DFS", 81, 10000);
             PutItemRequest putItemRequest = new PutItemRequest(tableName, item);
             PutItemResult putItemResult = dynamoDB.putItem(putItemRequest);
             System.out.println("Result: " + putItemResult);
 
             // Add another item
-            item = newItem("Airplane", 1980, "*****", "James", "Billy Bob");
+            item = newItem("2", "2", 9, "DFS", 81, 10000);
             putItemRequest = new PutItemRequest(tableName, item);
             putItemResult = dynamoDB.putItem(putItemRequest);
             System.out.println("Result: " + putItemResult);
@@ -276,9 +276,9 @@ public class WebServer {
             // Scan items for movies with a year attribute greater than 1985
             HashMap<String, Condition> scanFilter = new HashMap<String, Condition>();
             Condition condition = new Condition()
-                .withComparisonOperator(ComparisonOperator.GT.toString())
-                .withAttributeValueList(new AttributeValue().withN("1985"));
-            scanFilter.put("year", condition);
+                .withComparisonOperator(ComparisonOperator.EQ.toString())
+                .withAttributeValueList(new AttributeValue("DFS"));
+            scanFilter.put("algorithm", condition);
             ScanRequest scanRequest = new ScanRequest(tableName).withScanFilter(scanFilter);
             ScanResult scanResult = dynamoDB.scan(scanRequest);
             System.out.println("Result: " + scanResult);
@@ -299,13 +299,16 @@ public class WebServer {
         }
     }
 
-    private static Map<String, AttributeValue> newItem(String name, int year, String rating, String... fans) {
+    private static Map<String, AttributeValue> newItem(String name, String id_thread, int size, String algorithm, int entries, int metric) {
         Map<String, AttributeValue> item = new HashMap<String, AttributeValue>();
 		item.put("name", new AttributeValue(name));
+		item.put("id_thread", new AttributeValue(id_thread));
+		item.put("size", new AttributeValue().withN(Integer.toString(size)));
+		item.put("algorithm", new AttributeValue(algorithm));
+		item.put("entries", new AttributeValue().withN(Integer.toString(entries)));
+		item.put("metric", new AttributeValue().withN(Integer.toString(metric)));
 
-        item.put("year", new AttributeValue().withN(Integer.toString(year)));
-        item.put("rating", new AttributeValue(rating));
-        item.put("fans", new AttributeValue().withSS(fans));
+        //item.put("fans", new AttributeValue().withSS(fans)); //(String ... fans)
 
 		return item;
 	}

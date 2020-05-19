@@ -1,0 +1,118 @@
+> Query:	s=DLX&un=81&n1=9&n2=9&i=SUDOKU_PUZZLE_9x9_101
+Total Methods: 1340
+pt/ulisboa/tecnico/cnv/solver/AbstractSudokuSolver: 84 - 6.268657%
+pt/ulisboa/tecnico/cnv/solver/SolverArgumentParser$SolverParameters: 100 - 7.4626865%
+pt/ulisboa/tecnico/cnv/solver/SudokuSolverDLX$AlgorithmXSolver: 812 - 60.597015%
+pt/ulisboa/tecnico/cnv/solver/SolverArgumentParser: 100 - 7.4626865%
+pt/ulisboa/tecnico/cnv/solver/Solver: 243 - 18.134329%
+pt/ulisboa/tecnico/cnv/solver/SudokuSolverDLX$AlgorithmXSolver$Node: 1 - 0.07462686%
+
+
+> Query:	s=DLX&un=81&n1=9&n2=9&i=SUDOKU_PUZZLE_9x9_102
+Total Methods: 1340
+pt/ulisboa/tecnico/cnv/solver/AbstractSudokuSolver: 84 - 6.268657%
+pt/ulisboa/tecnico/cnv/solver/SolverArgumentParser$SolverParameters: 100 - 7.4626865%
+pt/ulisboa/tecnico/cnv/solver/SudokuSolverDLX$AlgorithmXSolver: 812 - 60.597015%
+pt/ulisboa/tecnico/cnv/solver/SolverArgumentParser: 100 - 7.4626865%
+pt/ulisboa/tecnico/cnv/solver/Solver: 243 - 18.134329%
+pt/ulisboa/tecnico/cnv/solver/SudokuSolverDLX$AlgorithmXSolver$Node: 1 - 0.07462686%
+
+
+> Query:	s=DLX&un=81&n1=9&n2=9&i=SUDOKU_PUZZLE_9x9_103
+Total Methods: 1340
+pt/ulisboa/tecnico/cnv/solver/AbstractSudokuSolver: 84 - 6.268657%
+pt/ulisboa/tecnico/cnv/solver/SolverArgumentParser$SolverParameters: 100 - 7.4626865%
+pt/ulisboa/tecnico/cnv/solver/SudokuSolverDLX$AlgorithmXSolver: 812 - 60.597015%
+pt/ulisboa/tecnico/cnv/solver/SolverArgumentParser: 100 - 7.4626865%
+pt/ulisboa/tecnico/cnv/solver/Solver: 243 - 18.134329%
+pt/ulisboa/tecnico/cnv/solver/SudokuSolverDLX$AlgorithmXSolver$Node: 1 - 0.07462686%
+
+
+> Query:	s=DLX&un=81&n1=9&n2=9&i=SUDOKU_PUZZLE_9x9_104
+Total Methods: 1340
+pt/ulisboa/tecnico/cnv/solver/AbstractSudokuSolver: 84 - 6.268657%
+pt/ulisboa/tecnico/cnv/solver/SolverArgumentParser$SolverParameters: 100 - 7.4626865%
+pt/ulisboa/tecnico/cnv/solver/SudokuSolverDLX$AlgorithmXSolver: 812 - 60.597015%
+pt/ulisboa/tecnico/cnv/solver/SolverArgumentParser: 100 - 7.4626865%
+pt/ulisboa/tecnico/cnv/solver/Solver: 243 - 18.134329%
+pt/ulisboa/tecnico/cnv/solver/SudokuSolverDLX$AlgorithmXSolver$Node: 1 - 0.07462686%
+
+
+> Query:	s=DLX&un=81&n1=9&n2=9&i=SUDOKU_PUZZLE_9x9_105
+Total Methods: 1340
+pt/ulisboa/tecnico/cnv/solver/AbstractSudokuSolver: 84 - 6.268657%
+pt/ulisboa/tecnico/cnv/solver/SolverArgumentParser$SolverParameters: 100 - 7.4626865%
+pt/ulisboa/tecnico/cnv/solver/SudokuSolverDLX$AlgorithmXSolver: 812 - 60.597015%
+pt/ulisboa/tecnico/cnv/solver/SolverArgumentParser: 100 - 7.4626865%
+pt/ulisboa/tecnico/cnv/solver/Solver: 243 - 18.134329%
+pt/ulisboa/tecnico/cnv/solver/SudokuSolverDLX$AlgorithmXSolver$Node: 1 - 0.07462686%
+
+
+> Query:	s=DLX&un=256&n1=16&n2=16&i=SUDOKU_PUZZLE_16x16_01
+Total Methods: 4168
+pt/ulisboa/tecnico/cnv/solver/AbstractSudokuSolver: 259 - 6.2140117%
+pt/ulisboa/tecnico/cnv/solver/SolverArgumentParser$SolverParameters: 289 - 6.9337816%
+pt/ulisboa/tecnico/cnv/solver/SudokuSolverDLX$AlgorithmXSolver: 2562 - 61.468334%
+pt/ulisboa/tecnico/cnv/solver/SolverArgumentParser: 289 - 6.9337816%
+pt/ulisboa/tecnico/cnv/solver/Solver: 768 - 18.426104%
+pt/ulisboa/tecnico/cnv/solver/SudokuSolverDLX$AlgorithmXSolver$Node: 1 - 0.023992322%
+
+
+> Query:	s=DLX&un=256&n1=16&n2=16&i=SUDOKU_PUZZLE_16x16_02
+Total Methods: 4168
+pt/ulisboa/tecnico/cnv/solver/AbstractSudokuSolver: 259 - 6.2140117%
+pt/ulisboa/tecnico/cnv/solver/SolverArgumentParser$SolverParameters: 289 - 6.9337816%
+pt/ulisboa/tecnico/cnv/solver/SudokuSolverDLX$AlgorithmXSolver: 2562 - 61.468334%
+pt/ulisboa/tecnico/cnv/solver/SolverArgumentParser: 289 - 6.9337816%
+pt/ulisboa/tecnico/cnv/solver/Solver: 768 - 18.426104%
+pt/ulisboa/tecnico/cnv/solver/SudokuSolverDLX$AlgorithmXSolver$Node: 1 - 0.023992322%
+
+
+> Query:	s=DLX&un=256&n1=16&n2=16&i=SUDOKU_PUZZLE_16x16_03
+Total Methods: 4168
+pt/ulisboa/tecnico/cnv/solver/AbstractSudokuSolver: 259 - 6.2140117%
+pt/ulisboa/tecnico/cnv/solver/SolverArgumentParser$SolverParameters: 289 - 6.9337816%
+pt/ulisboa/tecnico/cnv/solver/SudokuSolverDLX$AlgorithmXSolver: 2562 - 61.468334%
+pt/ulisboa/tecnico/cnv/solver/SolverArgumentParser: 289 - 6.9337816%
+pt/ulisboa/tecnico/cnv/solver/Solver: 768 - 18.426104%
+pt/ulisboa/tecnico/cnv/solver/SudokuSolverDLX$AlgorithmXSolver$Node: 1 - 0.023992322%
+
+
+> Query:	s=DLX&un=256&n1=16&n2=16&i=SUDOKU_PUZZLE_16x16_04
+Total Methods: 4168
+pt/ulisboa/tecnico/cnv/solver/AbstractSudokuSolver: 259 - 6.2140117%
+pt/ulisboa/tecnico/cnv/solver/SolverArgumentParser$SolverParameters: 289 - 6.9337816%
+pt/ulisboa/tecnico/cnv/solver/SudokuSolverDLX$AlgorithmXSolver: 2562 - 61.468334%
+pt/ulisboa/tecnico/cnv/solver/SolverArgumentParser: 289 - 6.9337816%
+pt/ulisboa/tecnico/cnv/solver/Solver: 768 - 18.426104%
+pt/ulisboa/tecnico/cnv/solver/SudokuSolverDLX$AlgorithmXSolver$Node: 1 - 0.023992322%
+
+
+> Query:	s=DLX&un=625&n1=25&n2=25&i=SUDOKU_PUZZLE_16x16_05
+Total Methods: 1985
+pt/ulisboa/tecnico/cnv/solver/AbstractSudokuSolver: 628 - 31.637278%
+pt/ulisboa/tecnico/cnv/solver/SolverArgumentParser$SolverParameters: 676 - 34.055416%
+pt/ulisboa/tecnico/cnv/solver/SudokuSolverDLX$AlgorithmXSolver: 4 - 0.20151134%
+pt/ulisboa/tecnico/cnv/solver/SolverArgumentParser: 676 - 34.055416%
+pt/ulisboa/tecnico/cnv/solver/SudokuSolverDLX$AlgorithmXSolver$Node: 1 - 0.050377835%
+pt/ulisboa/tecnico/cnv/solver/Solver: 0 - 18.549664%
+
+
+> Query:	s=DLX&un=625&n1=25&n2=25&i=SUDOKU_PUZZLE_16x16_06
+Total Methods: 10108
+pt/ulisboa/tecnico/cnv/solver/AbstractSudokuSolver: 628 - 6.2129006%
+pt/ulisboa/tecnico/cnv/solver/SolverArgumentParser$SolverParameters: 676 - 6.6877723%
+pt/ulisboa/tecnico/cnv/solver/SudokuSolverDLX$AlgorithmXSolver: 6252 - 61.851997%
+pt/ulisboa/tecnico/cnv/solver/SolverArgumentParser: 676 - 6.6877723%
+pt/ulisboa/tecnico/cnv/solver/Solver: 1875 - 18.549664%
+pt/ulisboa/tecnico/cnv/solver/SudokuSolverDLX$AlgorithmXSolver$Node: 1 - 0.009893154%
+
+
+> Query:	s=DLX&un=625&n1=25&n2=25&i=SUDOKU_PUZZLE_25x25_01
+Total Methods: 10108
+pt/ulisboa/tecnico/cnv/solver/AbstractSudokuSolver: 628 - 6.2129006%
+pt/ulisboa/tecnico/cnv/solver/SolverArgumentParser$SolverParameters: 676 - 6.6877723%
+pt/ulisboa/tecnico/cnv/solver/SudokuSolverDLX$AlgorithmXSolver: 6252 - 61.851997%
+pt/ulisboa/tecnico/cnv/solver/SolverArgumentParser: 676 - 6.6877723%
+pt/ulisboa/tecnico/cnv/solver/Solver: 1875 - 18.549664%
+pt/ulisboa/tecnico/cnv/solver/SudokuSolverDLX$AlgorithmXSolver$Node: 1 - 0.009893154%

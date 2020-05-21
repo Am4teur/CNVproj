@@ -52,17 +52,18 @@ import com.amazonaws.services.dynamodbv2.util.TableUtils;
 public class WebServer {
 
 	// variable that has access to the DB
-	static AmazonDynamoDB dynamoDB;
+    static AmazonDynamoDB dynamoDB;
+    static String tableName = "metrics";
 
 	public static void main(final String[] args) throws Exception {
 
 		final HttpServer server = HttpServer.create(new InetSocketAddress(8000), 0);
 
 		server.createContext("/", new Hello());
-		server.createContext("/sudoku", new MyHandler());
-
-		// init dynamoDB table
-		dynamoDB_init();
+        server.createContext("/sudoku", new MyHandler());
+        
+        // init dynamoDB table
+        dynamoDB_init(tableName);
 
 		// be aware! infinite pool of threads!
 		server.setExecutor(Executors.newCachedThreadPool());
@@ -97,7 +98,6 @@ public class WebServer {
 			// Get the query.
 			final String query = t.getRequestURI().getQuery();
 			System.out.println("> Query:\t" + query);
-			System.out.println("test1234\t" + query);
 
 			// Break it down into String[].
 			final String[] params = query.split("&");
@@ -144,37 +144,9 @@ public class WebServer {
 			System.out.println(print);
 
 
-//			try {
-//				File file = new File("tempBD.txt");
-//				FileWriter fstream = new FileWriter(file, true); //true tells to append data.
-//				out = new BufferedWriter(fstream);
-//				out.write("\n");
-//				out.write("> Query:\t" + query + "\n");
-//				out.write(print);
-//				out.write("\n");
-//			} catch (IOException e) {
-//				System.err.println("Error: " + e.getMessage());
-//			} finally {
-//				if(out != null) {
-//					out.close();
-//				}
-//			}
-
-//			try {
-//				File file = new File("StempBD.txt");
-//				FileWriter fstream = new FileWriter(file, true); //true tells to append data.
-//				out = new BufferedWriter(fstream);
-//				out.write("\n");
-//				out.write("> Query:\t" + query + "\n");
-//				out.write(MethodsTest.getTestString(thread_id));
-//				out.write("\n");
-//			} catch (IOException e) {
-//				System.err.println("Error: " + e.getMessage());
-//			} finally {
-//				if(out != null) {
-//					out.close();
-//				}
-//			}
+            /* Add new Item to DynamoDB */
+            // TODOOOOOO not sure what happens if we get an error from the solver
+            addItem(tableName, args, String.valueOf(thread_id), (int)(elapsedTime*1e-6), (int)(Methods.get_dyn_method_count(thread_id)));
 
 
 			// Send response to browser.
@@ -239,11 +211,11 @@ public class WebServer {
             .build();
 	}
 	
-	private static void dynamoDB_init() throws Exception {
+	private static void dynamoDB_init(String tabName) throws Exception {
 		init();
 
         try {
-            String tableName = "metrics";
+            String tableName = tabName;
 
             // Create a table with a primary hash key named 'name', which holds a string
             CreateTableRequest createTableRequest = new CreateTableRequest().withTableName(tableName)
@@ -260,18 +232,6 @@ public class WebServer {
             DescribeTableRequest describeTableRequest = new DescribeTableRequest().withTableName(tableName);
             TableDescription tableDescription = dynamoDB.describeTable(describeTableRequest).getTable();
             System.out.println("Table Description: " + tableDescription);
-
-            // Add an item
-            Map<String, AttributeValue> item = newItem("1", "1", 9, "DFS", 81, 10000);
-            PutItemRequest putItemRequest = new PutItemRequest(tableName, item);
-            PutItemResult putItemResult = dynamoDB.putItem(putItemRequest);
-            System.out.println("Result: " + putItemResult);
-
-            // Add another item
-            item = newItem("2", "2", 9, "DFS", 81, 10000);
-            putItemRequest = new PutItemRequest(tableName, item);
-            putItemResult = dynamoDB.putItem(putItemRequest);
-            System.out.println("Result: " + putItemResult);
 
             // Scan items for movies with a year attribute greater than 1985
             HashMap<String, Condition> scanFilter = new HashMap<String, Condition>();
@@ -299,10 +259,10 @@ public class WebServer {
         }
     }
 
-    private static Map<String, AttributeValue> newItem(String name, String id_thread, int size, String algorithm, int entries, int metric) {
+    private static Map<String, AttributeValue> newItem(String name, String thread_id, String algorithm, int size, int entries, int metric) {
         Map<String, AttributeValue> item = new HashMap<String, AttributeValue>();
 		item.put("name", new AttributeValue(name));
-		item.put("id_thread", new AttributeValue(id_thread));
+		item.put("thread_id", new AttributeValue(thread_id));
 		item.put("size", new AttributeValue().withN(Integer.toString(size)));
 		item.put("algorithm", new AttributeValue(algorithm));
 		item.put("entries", new AttributeValue().withN(Integer.toString(entries)));
@@ -311,5 +271,22 @@ public class WebServer {
         //item.put("fans", new AttributeValue().withSS(fans)); //(String ... fans)
 
 		return item;
-	}
+    }
+    
+    private static void addItem(String tableName, String[] args, String thread_id, int time, int metric) {
+        String algorithm = args[1];
+        int entries = Integer.parseInt(args[3]);
+        int size = Integer.parseInt(args[5]);
+        System.out.println("algorithm = " + algorithm);
+        System.out.println("entries = " + entries);
+        System.out.println("size = " + size);
+        System.out.println("thread_id = " + thread_id);
+        System.out.println("time" + time);
+        System.out.println("metric = " + metric);
+
+        Map<String, AttributeValue> item = newItem("Name", thread_id, algorithm, size, entries, metric);
+        PutItemRequest putItemRequest = new PutItemRequest(tableName, item);
+        PutItemResult putItemResult = dynamoDB.putItem(putItemRequest);
+        System.out.println("> addItem Result: " + putItemResult.toString());
+    }
 }

@@ -48,6 +48,8 @@ import com.amazonaws.services.dynamodbv2.model.ScanResult;
 import com.amazonaws.services.dynamodbv2.model.TableDescription;
 import com.amazonaws.services.dynamodbv2.util.TableUtils;
 
+import java.util.UUID;
+
 
 public class WebServer {
 
@@ -219,8 +221,8 @@ public class WebServer {
 
             // Create a table with a primary hash key named 'name', which holds a string
             CreateTableRequest createTableRequest = new CreateTableRequest().withTableName(tableName)
-                .withKeySchema(new KeySchemaElement().withAttributeName("name").withKeyType(KeyType.HASH))
-                .withAttributeDefinitions(new AttributeDefinition().withAttributeName("name").withAttributeType(ScalarAttributeType.S))
+                .withKeySchema(new KeySchemaElement().withAttributeName("id").withKeyType(KeyType.HASH))
+                .withAttributeDefinitions(new AttributeDefinition().withAttributeName("id").withAttributeType(ScalarAttributeType.S))
                 .withProvisionedThroughput(new ProvisionedThroughput().withReadCapacityUnits(1L).withWriteCapacityUnits(1L));
 
             // Create table if it does not exist yet
@@ -259,9 +261,9 @@ public class WebServer {
         }
     }
 
-    private static Map<String, AttributeValue> newItem(String name, String thread_id, String algorithm, int size, int entries, int metric) {
+    private static Map<String, AttributeValue> newItem(String id, String thread_id, String algorithm, int size, int entries, int metric) {
         Map<String, AttributeValue> item = new HashMap<String, AttributeValue>();
-		item.put("name", new AttributeValue(name));
+		item.put("id", new AttributeValue(id));
 		item.put("thread_id", new AttributeValue(thread_id));
 		item.put("size", new AttributeValue().withN(Integer.toString(size)));
 		item.put("algorithm", new AttributeValue(algorithm));
@@ -284,7 +286,10 @@ public class WebServer {
         System.out.println("time" + time);
         System.out.println("metric = " + metric);
 
-        Map<String, AttributeValue> item = newItem("Name", thread_id, algorithm, size, entries, metric);
+        UUID uuid = UUID.randomUUID();
+        String id = uuid.toString();
+
+        Map<String, AttributeValue> item = newItem(id, thread_id, algorithm, size, entries, metric);
         PutItemRequest putItemRequest = new PutItemRequest(tableName, item);
         PutItemResult putItemResult = dynamoDB.putItem(putItemRequest);
         System.out.println("> addItem Result: " + putItemResult.toString());
